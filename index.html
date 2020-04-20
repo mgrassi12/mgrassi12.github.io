@@ -1,1 +1,46 @@
-Hello world
+<html>
+    <body>
+        <h2>AC Turnip Calculator</h2>
+        <form name="turnip-price-calculator">
+            <script>
+                function calculateTurnipPriceRatio() {
+                    document.getElementById("result").value = eval(document.getElementById("monday").value / document.getElementById("sunday").value);
+                    if (document.getElementById("result").value >= 0.91){
+                        document.getElementById("trend").innerHTML = "You will probably experience a 'random' trend or 'small spike in price' trend.";
+                    } else if (0.85 <= document.getElementById("result").value && document.getElementById("result").value < 0.91) {
+                        document.getElementById("trend").innerHTML = "You will probably experience a 'decreasing price' trend, 'small spike in price' trend, or 'large spike in price' trend.";
+                    } else if (0.8 <= document.getElementById("result").value && document.getElementById("result").value < 0.85) {
+                        document.getElementById("trend").innerHTML = "You will probably experience a 'small spike in price' trend or 'large spike in price' trend.";
+                    } else if (0.6 <= document.getElementById("result").value && document.getElementById("result").value < 0.8) {
+                        document.getElementById("trend").innerHTML = "You will probably experience a 'random' trend or 'small spike in price' trend.";
+                    } else if (document.getElementById("result").value && document.getElementById("result").value < 0.6) {
+                        document.getElementById("trend").innerHTML = "You will probably experience a 'small spike in price' trend.";
+                    }
+                }
+            </script>
+            
+            <p>Monday morning sell price:</p>
+            <input type="number" name="monday" id="monday" value="1">
+            <p>Sunday (previous day) buy price:</p>
+            <input type="number" name="sunday" id="sunday" value="1">
+            <br>
+            <button type="button" onclick="calculateTurnipPriceRatio()">Submit</button>
+            <br>
+            <br>
+            <br>
+            <h3>Result:</h3>
+            <input type="number" name="result" id="result" value="0" disabled>
+            <h3>Predicted trend:</h3>
+            <p id="trend"> Please submit values.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2>Extra Reading</h2>
+            <img src = "https://pbs.twimg.com/media/EUT4ZTWVAAA7S9V?format=jpg&name=medium">
+            <br>
+            <img src = "https://pbs.twimg.com/media/EUT4aS1UEAAz73u?format=jpg&name=medium">
+            <p>Information from: https://twitter.com/tyroszither/status/1244692699241799687 </p>
+        </form>
+    </body>
+</html> 
